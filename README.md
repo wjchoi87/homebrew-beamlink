@@ -7,12 +7,14 @@ control of your Mac from an Android device.
 
 ```bash
 brew tap wjchoi87/beamlink
+brew trust wjchoi87/beamlink   # required by Homebrew 6.x for third-party taps
 brew install --cask beamlink
 ```
 
-The DMG served by the tap is identical to the one on the homepage, but Homebrew
-does not apply the `com.apple.quarantine` attribute, so the app launches without
-the macOS Gatekeeper "Open Anyway" step.
+Homebrew 6.x applies the `com.apple.quarantine` attribute to downloads. BeamLink
+is self-signed (not notarized) yet, so a quarantined copy would be held by
+Gatekeeper on first launch — the cask therefore strips the attribute in a
+`postflight` step, and the app opens immediately after install.
 
 ## Updates
 
