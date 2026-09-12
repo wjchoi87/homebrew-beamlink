@@ -1,6 +1,6 @@
 cask "beamlink" do
-  version "0.12.0-beta.10"
-  sha256 "e51113e2d5b8bb0091f24f92520cfcac2ed49547770d40b24137ff2c29e0f360"
+  version "0.12.0-beta.11"
+  sha256 "50c893383fa51fb10a16c0d51db78da7888bfca9252e34b245fa0bcb95546b01"
 
   url "https://getbeamlink.com/download/BeamLink-#{version}.dmg"
   name "BeamLink"
