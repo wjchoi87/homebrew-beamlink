@@ -11,13 +11,4 @@ cask "beamlink" do
   auto_updates true
 
   app "BeamLink.app"
-
-  # BeamLink is Developer ID signed and notarized, so Gatekeeper accepts the
-  # quarantined copy too. Clearing quarantine only skips macOS's one-time
-  # "downloaded from the Internet" prompt for brew installs.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/BeamLink.app"],
-                   sudo: false
-  end
 end
